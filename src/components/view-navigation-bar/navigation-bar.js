@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 
 function NavigationBar() {
+
+    // Leave the state of the navigation bar open.
+    const [open, setOpen] = useState(false);
+    const [classname, setClassname] = useState(null);
+
+    // Function for opening and closing the navigation bar.
+    function openNavigationBar() {
+        if (open) {
+            setClassname("null");
+            setOpen(false);
+        } else {
+            setClassname("navigation-bar__open")
+            setOpen(true);
+        }
+    }
+
     return (
-        <nav>
-            <a href="/" id="navigation-bar__header">Neutron Blog</a>
-            <span id="navigation-bar__button">&#8801;</span>
+        <nav className={classname}>
+            <a href="/" id="navigation-bar__header"><span style={{color: "#667ba6"}}>Neutron</span> Blog</a>
+            <span id="navigation-bar__button" onClick={openNavigationBar}>&#8801;</span>
         </nav>
     )
 }
