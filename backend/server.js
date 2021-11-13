@@ -1,5 +1,6 @@
 const express = require("express");
 const { MongoClient } = require("mongodb");
+const BlogsDAO = require("./dao/blogsDAO");
 
 // MongoDB URI.
 const URI = "mongodb+srv://Henry:gw-henry2021@cluster0.npt1l.mongodb.net/Project0?retryWrites=true&w=majority";
@@ -7,21 +8,22 @@ const URI = "mongodb+srv://Henry:gw-henry2021@cluster0.npt1l.mongodb.net/Project
 // New MongoDB client.
 const client = new MongoClient(URI);
 
-async function test() {
+let blogsData;
+
+async function initialize() {
     try {
         await client.connect();
-        // await listDataBases(client);
-
-        // Creating an object for the "neutron" database.
-        const neutronDB = await client.db("neutron");
-        const neutronCollections = await neutronDB.listCollections().toArray();
-
-        neutronCollections.map(collection => console.log(collection));
-    } catch (error) {
-        console.log(error);
-    } finally {
-        await client.close();
+        await BlogsDAO.insertDataBase(client);
+        blogsData = await BlogsDAO.retrieveAllBlogs();
+    } catch(error) {
+        console.log("Unable to connect to the said database: " + error);
     }
+
+    // catch (error) {
+    //     console.log(error);
+    // } finally {
+    //     await client.close();
+    // }
 }
 
 async function listDataBases(client) {
@@ -31,7 +33,8 @@ async function listDataBases(client) {
     databasesList.databases.forEach(db => console.log(`  -${db.name}`));
 }
 
-test();
+initialize()
+    .catch(error => console.log(error));
 
 // Initialize the Express app.
 const app = express();
@@ -39,15 +42,13 @@ const app = express();
 // Initialize the port.
 const PORT = process.env.PORT || 3001;
 
-// 
+// Send all data to "/api".
 app.get("/api", (request, response) => {
-    response.json({ message: "Hello from the backend!" });
+    // Obtain the data from the BlogsDAO.
+    response.json(blogsData);
 });
 
 // Listen on port 3001.
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`);
 });
-
-test()
-    .catch(error => console.log(error));
