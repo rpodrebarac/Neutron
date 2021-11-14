@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function NavigationBar() {
 
@@ -19,7 +20,7 @@ function NavigationBar() {
 
     return (
         <nav className={classname}>
-            <a href="/" id="navigation-bar__header"><span style={{color: "#667ba6"}}>Neutron</span> Blog</a>
+            <Link to="/" id="navigation-bar__header"><span style={{color: "#667ba6"}}>Neutron</span> Blog</Link>
             <span id="navigation-bar__button" onClick={openNavigationBar}>&#8801;</span>
         </nav>
     )

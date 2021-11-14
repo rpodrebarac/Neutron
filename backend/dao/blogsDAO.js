@@ -24,4 +24,18 @@ module.exports = class BlogsDAO {
         // Return the retrieved blogs.
         return blogs;
     }
+
+    // Post a new blog to the database.
+    static async postBlog(blogData) {
+        const result = await neutronCollection.insertOne(blogData);
+
+        // Ensure that the blog has been successfully posted.
+        let { ok } = result;
+        
+        if (!ok) {
+            console.log("Your blog failed to post correctly.")
+        } else {
+            console.log("Your blog correctly posted.");
+        }
+    }
 }

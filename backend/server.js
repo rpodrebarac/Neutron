@@ -17,6 +17,9 @@ const app = express();
 // Initialize the port.
 const PORT = process.env.PORT || 3001;
 
+// Middleware.
+app.use(express.json());
+
 // All blog related routes.
 app.use("/", router);
 
