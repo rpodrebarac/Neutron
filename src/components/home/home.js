@@ -1,19 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import HomeBlog from "../blogs/home-blog";
 import IndividualHomeBlog from "../blogs/individual-home-blog";
 import magnetar from "../../images/magnetar.jpg";
+import { Link } from "react-router-dom";
+import useBlogData from "../custom-hook/useBlogData";
 
 function Home() {
-    // Store the blogs.
-    const [blogs, setBlogs] = useState(null);
-
     // Fetch the blog data from the database.
-    useEffect(() => {
-        fetch("/api")
-            .then(response => response.json())
-            .then(data => setBlogs(data))
-            .catch(error => console.log(error))
-    }, []);
+    const { data: blogs, isPending } = useBlogData("/api");
 
     return (
         <div>
@@ -22,15 +16,17 @@ function Home() {
                 <HomeBlog />
             </div>
 
-            {!blogs ? <p>Loading blogs...</p> : blogs.map(blog => 
-                <IndividualHomeBlog 
-                    image={magnetar}
-                    altText={"Magnetar."}
-                    title={blog.title}
-                    category={blog.category}
-                    date={blog.date}
-                    description={blog.description}
-                />
+            {isPending ? <p>Loading blogs...</p> : blogs.map(blog => 
+                <Link to={`/blogs/${blog._id}`} key={blog._id}>
+                    <IndividualHomeBlog 
+                        image={magnetar}
+                        altText={"Magnetar."}
+                        title={blog.title}
+                        category={blog.category}
+                        date={blog.date}
+                        description={blog.description}
+                    />
+                </Link>
             )}
         </div>
     )
