@@ -15,14 +15,21 @@ module.exports = class BlogsDAO {
 
     // Obtain all blogs.
     static async retrieveAllBlogs() {
-        let blogsData = await neutronCollection.find({})
+        // Retrieve all blogs and sort from most recent to least recent.
+        let blogsData = await neutronCollection.find({}).sort([["date", 1]]);
         let blogs = await blogsData.toArray();  
-
-        // Log all blogs to the console to ensure that everything is functioning appropriately.
-        // console.log(blogs);
 
         // Return the retrieved blogs.
         return blogs;
+    }
+
+    // Obtain a specific blog.
+    static async retrieveASpecificBlog(titleFilter) {
+        // Search for the specific blog.
+        let specificBlogData = await neutronCollection.findOne({ title: titleFilter });
+
+        // Return the specific blog.
+        return specificBlogData;
     }
 
     // Post a new blog to the database.

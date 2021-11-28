@@ -7,6 +7,12 @@ module.exports = class BlogsController {
         response.json(blogsData);
     }
 
+    // "Send" the home blog data from the database.
+    static async apiSendHomeBlogData(request, response) {
+        let specificBlogData = await BlogsDAO.retrieveASpecificBlog("Hello, World");
+        response.json(specificBlogData);
+    }
+
     // Create a new blog.
     static async apiCreateBlog(request, response) {
         // Ensure that the request has been obtained.
