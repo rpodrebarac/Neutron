@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams } from "react-router";
+import ReactMarkdown from "react-markdown";
 import magnetar from "../../images/magnetar.jpg";
 import useBlogData from "../custom-hook/useBlogData";
 
@@ -25,7 +26,7 @@ function ReadableBlog() {
             <p>{readingBlog("description")}</p>
 
             <img src={magnetar} alt="Magnetar." />
-            <p>{readingBlog("content")}</p>
+            <div><ReactMarkdown children={readingBlog("content")} /></div>
         </div>
     )
 }
