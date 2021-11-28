@@ -6,14 +6,24 @@ import { Link } from "react-router-dom";
 import useBlogData from "../custom-hook/useBlogData";
 
 function Home() {
-    // Fetch the blog data from the database.
+    // Fetch each blog's data from the database.
     const { data: blogs, isPending } = useBlogData("/api");
+    const { data: homeBlog, isPending: isHomeBlogPending } = useBlogData("/api/home-blog");
+    
+    // Delete the "Hello, World" blog.
+    if (!isPending && !isHomeBlogPending) {
+        for (let i = 0; i < blogs.length; i++) {
+            if (blogs[i]["title"] === homeBlog.title) {
+                blogs.splice(i, 1);
+            }
+        }
+    }
 
     return (
         <div>
             <div id="home-grid">
                 <h1 id="home-grid__title">Explore Blogs</h1>
-                <HomeBlog />
+                { isHomeBlogPending ? <p>Loading...</p> : <Link to={`/blogs/${homeBlog._id}`}> <HomeBlog /> </Link> }
             </div>
 
             {isPending ? <p>Loading blogs...</p> : blogs.map(blog => 
