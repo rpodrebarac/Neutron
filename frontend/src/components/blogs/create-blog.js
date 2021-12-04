@@ -82,6 +82,9 @@ function CreateBlog() {
                     <option value="sun.png">The Sun</option>
                 </select>
 
+                {/* Image preview. */}
+                <img src={!newBlogInformation.image ? <p>Loading Image...</p> : require(`../../images/${newBlogInformation.image}`).default} alt="Your image preview is unavailable at the moment." />
+
                 <button type="submit">Post Blog</button>
             </form>
         </div>
