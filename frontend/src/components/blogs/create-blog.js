@@ -9,7 +9,7 @@ function CreateBlog() {
         category: "",
         description: "",
         content: "",
-        image: ""
+        image: "idea.png"
     });
 
     // Handle the alterations to each portion of blog information.
@@ -73,7 +73,7 @@ function CreateBlog() {
 
                 {/* Image selection. */}
                 <select name="image" onChange={event => handleNewBlogInformationAlteration(event)} required>
-                    <option value="idea.png" defaultValue>Idea (Default Image)</option>
+                    <option value="idea.png">Idea (Default Image)</option>
                     <option value="magnetar.jpg">Magnetar</option>
                     <option value="molecule.png">Molecule</option>
                     <option value="system-of-equations.png">Mathematics</option>
@@ -83,7 +83,7 @@ function CreateBlog() {
                 </select>
 
                 {/* Image preview. */}
-                <img src={!newBlogInformation.image ? <p>Loading Image...</p> : require(`../../images/${newBlogInformation.image}`).default} alt="Your image preview is unavailable at the moment." />
+                <img src={!newBlogInformation.image ? <p>Loading Image...</p> : require(`../../images/${newBlogInformation.image}`).default} alt="Your preview is unavailable at the moment." />
 
                 <button type="submit">Post Blog</button>
             </form>
