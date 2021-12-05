@@ -16,7 +16,7 @@ function HomeBlog() {
         <article id="home-blog">
             <img src={!displayHomeBlogInformation("image") ? <p>Loading Image...</p> : require(`../../images/${displayHomeBlogInformation("image")}`).default} alt={displayHomeBlogInformation("image")} id="home-blog__image" />
             <h2 className="home-blog__text">{displayHomeBlogInformation("title")}</h2>
-            <p className="home-blog__text"><span style={{color: "#667ba6"}}>{displayHomeBlogInformation("category")}</span> | {displayHomeBlogInformation("date")}</p>
+            <p className="home-blog__text"><span className="theme-colour">{displayHomeBlogInformation("category")}</span> | {displayHomeBlogInformation("date")}</p>
             <p className="home-blog__text extra-bottom-padding">Welcome to <i>Neutron Blog</i>, where various articles pertaining to journeys through physics, mathematics, chemistry, biology, and web development occur.</p>
         </article>
     )

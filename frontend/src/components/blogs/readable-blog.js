@@ -20,12 +20,26 @@ function ReadableBlog() {
     }
 
     return (
-        <div>
-            <h1>{readingBlog("title")}</h1>
-            <p>{readingBlog("description")}</p>
+        <div className="readable-blog-container">
+            {/* Main blog section. */}
+            <h1 className="readable-blog-title">{ readingBlog("title") }</h1>
+            <p className="readable-blog-description">{ readingBlog("description") }</p>
 
-            <img src={!readingBlog("image") ? <p>Loading...</p> : require(`../../images/${readingBlog("image")}`).default} alt="Failed to load." />
-            <div><ReactMarkdown children={readingBlog("content")} /></div>
+            <img src={ !readingBlog("image") ? <p>Loading...</p> : require(`../../images/${readingBlog("image")}`).default } alt="Failed to load." className="readable-blog-image" />
+            <p className="readable-blog-category-and-date"><span className="theme-colour">{ readingBlog("category") }</span> | { readingBlog("date") }</p>
+            <div className="readable-blog-content"><ReactMarkdown children={ readingBlog("content") } /></div>
+
+            {/* About the author section. */}
+            <hr className="theme-colour" style={{ "width": "100%" }} />
+            <div className="readable-blog-author-container">
+                <p><b>Henry Righton</b> is a ...</p>
+            </div>
+
+            {/* Bottom overhanging section. */}
+            <div className="readable-blog-overhang">
+                <h3>{ readingBlog("title") }</h3>
+                <p><b>{ readingBlog("date") }</b></p>
+            </div>
         </div>
     )
 }

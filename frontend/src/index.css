@@ -50,53 +50,11 @@ nav {
     font-size: 4rem;
 }
 
-/* Blogs. */
-#home-blog {
-    margin: 0 15%;
-    border-radius: 20px;
-    cursor: pointer;
-    transition-duration: 0.5s;
-}
-
-#home-blog:hover {
-    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
-}
-
-#home-blog__image {
-    width: 100%;
-    display: block;
-    margin: auto auto;
-    border-radius: 20px;
-}
-
-.home-blog__text {
-    padding: 5px;
-    text-align: center;
-}
-
-.view-blog-container {
-    display: grid;
-    grid-template-columns: 30% 70%;
-    margin: 2% 8%;
-    cursor: pointer;
-    border-radius: 20px;
-    transition-duration: 0.5s;
-}
-
-.view-blog-container:hover {
-    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
-}
-
-.view-blog-container h2, p {
-    padding-bottom: 10px;
-}
-
-.view-blog__image {
-    width: 90%;
-    border-radius: 20px;
-}
-
 /* Other. */
 .extra-bottom-padding {
     padding-bottom: 25px;
+}
+
+.theme-colour {
+    color: #667ba6;
 }

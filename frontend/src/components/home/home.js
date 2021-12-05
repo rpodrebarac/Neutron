@@ -3,6 +3,7 @@ import HomeBlog from "../blogs/home-blog";
 import IndividualHomeBlog from "../blogs/individual-home-blog";
 import { Link } from "react-router-dom";
 import useBlogData from "../custom-hook/useBlogData";
+import "../blogs/blogs.css";
 
 function Home() {
     // Fetch each blog's data from the database.
