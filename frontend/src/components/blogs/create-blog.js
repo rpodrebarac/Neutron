@@ -8,7 +8,8 @@ function CreateBlog() {
         date: new Date().toLocaleDateString(),
         category: "",
         description: "",
-        content: ""
+        content: "",
+        image: "idea.png"
     });
 
     // Handle the alterations to each portion of blog information.
@@ -40,6 +41,7 @@ function CreateBlog() {
     return (
         <div>
             <form onSubmit={handleSubmit}>
+                {/* Essential blog information. */}
                 <input 
                     name="title"
                     type="text"
@@ -68,6 +70,20 @@ function CreateBlog() {
                 />
 
                 <textarea name="content" placeholder="Content" value={newBlogInformation.content} onChange={event => handleNewBlogInformationAlteration(event)} required></textarea>
+
+                {/* Image selection. */}
+                <select name="image" onChange={event => handleNewBlogInformationAlteration(event)} required>
+                    <option value="idea.png">Idea (Default Image)</option>
+                    <option value="magnetar.jpg">Magnetar</option>
+                    <option value="molecule.png">Molecule</option>
+                    <option value="system-of-equations.png">Mathematics</option>
+                    <option value="periodic-table.png">Periodic Table</option>
+                    <option value="earth-from-space.png">Earth from Space</option>
+                    <option value="sun.png">The Sun</option>
+                </select>
+
+                {/* Image preview. */}
+                <img src={!newBlogInformation.image ? <p>Loading Image...</p> : require(`../../images/${newBlogInformation.image}`).default} alt="Your preview is unavailable at the moment." />
 
                 <button type="submit">Post Blog</button>
             </form>
