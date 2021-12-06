@@ -23,11 +23,11 @@ function Home() {
         <div>
             <div id="home-grid">
                 <h1 id="home-grid__title">Explore Blogs</h1>
-                { isHomeBlogPending ? <p>Loading...</p> : <Link to={`/blogs/${homeBlog._id}`}> <HomeBlog /> </Link> }
+                { isHomeBlogPending ? <p>Loading...</p> : <Link to={`/blogs/${homeBlog._id}`} className="links"> <HomeBlog /> </Link> }
             </div>
 
             {isPending ? <p>Loading blogs...</p> : blogs.map(blog => 
-                <Link to={`/blogs/${blog._id}`} key={blog._id}>
+                <Link to={`/blogs/${blog._id}`} key={blog._id} className="links">
                     <IndividualHomeBlog 
                         image={blog.image}
                         title={blog.title}

@@ -40,51 +40,63 @@ function CreateBlog() {
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
+            <h1 id="create-blog-title">Contribute</h1>
+
+            <form onSubmit={handleSubmit} id="create-blog-form-container">
                 {/* Essential blog information. */}
+                <label for="title">Title</label>
                 <input 
                     name="title"
                     type="text"
-                    placeholder="Title"
+                    placeholder="A Descriptive Title for the Blog."
                     value={newBlogInformation.title}
                     onChange={event => handleNewBlogInformationAlteration(event)}
                     required
                 />
 
+                <label for="category">Category</label>
                 <input 
                     name="category"
                     type="text"
-                    placeholder="Category"
+                    placeholder="A Category for the Blog."
                     value={newBlogInformation.category}
                     onChange={event => handleNewBlogInformationAlteration(event)}
                     required
                 />
 
+                <label for="description">Description</label>
                 <input 
                     name="description"
                     type="text"
-                    placeholder="Description"
+                    placeholder="A Sentence or Two That Describes the Blog."
                     value={newBlogInformation.description}
                     onChange={event => handleNewBlogInformationAlteration(event)}
                     required
                 />
 
-                <textarea name="content" placeholder="Content" value={newBlogInformation.content} onChange={event => handleNewBlogInformationAlteration(event)} required></textarea>
+                <label for="content">Content</label>
+                <textarea name="content" placeholder="Write the Blog in Markdown Format." value={newBlogInformation.content} onChange={event => handleNewBlogInformationAlteration(event)} required></textarea>
 
                 {/* Image selection. */}
-                <select name="image" onChange={event => handleNewBlogInformationAlteration(event)} required>
-                    <option value="idea.png">Idea (Default Image)</option>
-                    <option value="magnetar.jpg">Magnetar</option>
-                    <option value="molecule.png">Molecule</option>
-                    <option value="system-of-equations.png">Mathematics</option>
-                    <option value="periodic-table.png">Periodic Table</option>
-                    <option value="earth-from-space.png">Earth from Space</option>
-                    <option value="sun.png">The Sun</option>
-                </select>
+                <div id="create-blog-image-container">
+                    <div>
+                        <label for="image">Blog Image</label>
+                        <select name="image" onChange={event => handleNewBlogInformationAlteration(event)} required>
+                            <option value="idea.png">Idea (Default Image)</option>
+                            <option value="magnetar.jpg">Magnetar</option>
+                            <option value="molecule.png">Molecule</option>
+                            <option value="system-of-equations.png">Mathematics</option>
+                            <option value="periodic-table.png">Periodic Table</option>
+                            <option value="earth-from-space.png">Earth from Space</option>
+                            <option value="sun.png">The Sun</option>
+                        </select>
+                    </div>
 
-                {/* Image preview. */}
-                <img src={!newBlogInformation.image ? <p>Loading Image...</p> : require(`../../images/${newBlogInformation.image}`).default} alt="Your preview is unavailable at the moment." />
+                    {/* Image preview. */}
+                    <img src={!newBlogInformation.image ? <p>Loading Image...</p> : require(`../../images/${newBlogInformation.image}`).default} alt="Your preview is unavailable at the moment." id="create-blog-image" />
+                </div>
 
+                {/* Form submission. */}
                 <button type="submit">Post Blog</button>
             </form>
         </div>

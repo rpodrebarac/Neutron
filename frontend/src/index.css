@@ -58,3 +58,8 @@ nav {
 .theme-colour {
     color: #667ba6;
 }
+
+.links {
+    text-decoration: none;
+    color: black;
+}

@@ -94,3 +94,62 @@
     margin-right: 5vw;
     padding: 2vh 5vw 2vh 5vw;
 }
+
+/* Create Blogs. */
+#create-blog-title {
+    text-align: center;
+    font-size: 3.5rem;
+    padding-top: 8vh;
+}
+
+#create-blog-form-container {
+    margin: 10vh 18.5%;
+}
+
+label {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+input[type = text], textarea, select, option {
+    width: 100%;
+    margin: 2vh 0 5vh 0;
+    padding: 12px 20px;
+    border-radius: 6px;
+    border: 1px solid rgb(197, 175, 175);
+    font-size: 1rem;
+    resize: vertical;
+}
+
+textarea {
+    height: 40vh;
+}
+
+#create-blog-image-container {
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+#create-blog-image {
+    display: block;
+    width: 60%;
+    margin: auto auto;
+    border-radius: 12px;
+}
+
+button {
+    display: block;
+    margin: 7vh auto;
+    padding: 12px 20px;
+    background-color: white;
+    border: 2px solid #667ba6;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.75s;
+}
+
+button:hover {
+    color: white;
+    background-color: #667ba6;
+}
