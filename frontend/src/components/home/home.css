@@ -1,0 +1,26 @@
+/* All home styling. */
+#home-grid {
+    height: 90vh;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    align-content: center;
+}
+
+#home-grid__title {
+    padding: 30% 10% 0 15%;
+    font-size: 4rem;
+}
+
+/* All filtered home styling. */
+#filtered-home-category {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40vh;
+    background-color: #fafafa;
+    margin-bottom: 10vh;
+}
+
+#filtered-home-category__title {
+    font-size: 3rem;
+}

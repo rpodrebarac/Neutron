@@ -13,6 +13,16 @@ module.exports = class BlogsController {
         response.json(specificBlogData);
     }
 
+    // "Send" blog data given a filtered category.
+    static async apiSendFilteredBlogData(request, response) {
+        // Obtain the requested category.
+        let category = request.params.category;
+
+        // "Send" the data related to the requested category.
+        let filteredBlogData = await BlogsDAO.retrieveBlogsByCategory(category);
+        response.json(filteredBlogData);
+    }
+
     // Create a new blog.
     static async apiCreateBlog(request, response) {
         // Ensure that the request has been obtained.

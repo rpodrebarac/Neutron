@@ -28,11 +28,11 @@ function NavigationBar() {
             <div id="navigation-bar__blog-categories">
                 {/* Blog categories (akin to filters). */}
                 <p className="navigation-bar__option-header">Explore Blogs by Category</p>
-                <Link to="/" className="navigation-bar__blog-category" onClick={openNavigationBar}>Mathematics</Link>
-                <Link to="/" className="navigation-bar__blog-category" onClick={openNavigationBar}>Physics</Link>
-                <Link to="/" className="navigation-bar__blog-category" onClick={openNavigationBar}>Chemistry</Link>
-                <Link to="/" className="navigation-bar__blog-category" onClick={openNavigationBar}>Web Development</Link>
-                <Link to="/" className="navigation-bar__blog-category" onClick={openNavigationBar}>Other</Link>
+                <Link to="/mathematics" className="navigation-bar__blog-category" onClick={openNavigationBar}>Mathematics</Link>
+                <Link to="/physics" className="navigation-bar__blog-category" onClick={openNavigationBar}>Physics</Link>
+                <Link to="/chemistry" className="navigation-bar__blog-category" onClick={openNavigationBar}>Chemistry</Link>
+                <Link to="/web-development" className="navigation-bar__blog-category" onClick={openNavigationBar}>Web Development</Link>
+                <Link to="/other" className="navigation-bar__blog-category" onClick={openNavigationBar}>Other</Link>
 
                 {/* TODO: To the said blog's "Contribute" page. */}
             </div>

@@ -1,21 +1,9 @@
+/* Fonts and general styling. */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 
 * {
     font-family: "Noto Sans", sans-serif;
     margin: 0;
-}
-
-/* Home. */
-#home-grid {
-    height: 90vh;
-    display: grid;
-    grid-template-columns: 40% 60%;
-    align-content: center;
-}
-
-#home-grid__title {
-    padding: 30% 10% 0 15%;
-    font-size: 4rem;
 }
 
 /* Other. */

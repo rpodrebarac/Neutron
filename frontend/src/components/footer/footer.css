@@ -14,6 +14,14 @@
     font-size: 1.5rem;
 }
 
+#footer-links .links {
+    transition: 0.5s;
+}
+
+#footer-links .links:hover {
+    text-decoration: underline;
+}
+
 #footer-line {
     background-color: silver;
     margin: 0 8%;

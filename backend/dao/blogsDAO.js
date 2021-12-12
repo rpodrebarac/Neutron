@@ -23,6 +23,16 @@ module.exports = class BlogsDAO {
         return blogs;
     }
 
+    // Obtain blogs that fall under a specified category.
+    static async retrieveBlogsByCategory(category) {
+        // Retrieve and sort the blogs by category.
+        let filteredBlogsData = await neutronCollection.find({ category: { $all: [category] } });
+        let filteredBlogs = await filteredBlogsData.toArray();
+
+        // Return the retrieved and filtered blogs.
+        return filteredBlogs;
+    }
+
     // Obtain a specific blog.
     static async retrieveASpecificBlog(titleFilter) {
         // Search for the specific blog.
