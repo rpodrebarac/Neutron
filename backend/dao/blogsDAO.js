@@ -16,7 +16,9 @@ module.exports = class BlogsDAO {
     // Obtain all blogs.
     static async retrieveAllBlogs() {
         // Retrieve all blogs and sort from most recent to least recent.
-        let blogsData = await neutronCollection.find({}).sort([["date", 1]]);
+        let blogsData = await neutronCollection
+            .find({})
+            .sort([["date", -1]]);
         let blogs = await blogsData.toArray();  
 
         // Return the retrieved blogs.
@@ -26,7 +28,9 @@ module.exports = class BlogsDAO {
     // Obtain blogs that fall under a specified category.
     static async retrieveBlogsByCategory(category) {
         // Retrieve and sort the blogs by category.
-        let filteredBlogsData = await neutronCollection.find({ category: { $all: [category] } });
+        let filteredBlogsData = await neutronCollection
+            .find({ category: { $all: [category] } })
+            .sort([["date", -1]]);
         let filteredBlogs = await filteredBlogsData.toArray();
 
         // Return the retrieved and filtered blogs.
