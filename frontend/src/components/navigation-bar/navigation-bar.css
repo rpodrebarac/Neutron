@@ -2,11 +2,11 @@
 nav {
     height: 8vmin;
     width: 100%;
-    padding: 3% 0 1% 0;
+    padding-top: 4vmin;
     position: sticky;
     top: 0;
     left: 0;
-    font-size: 1.5rem;
+    font-size: 1rem;
     z-index: 1;
     overflow-y: hidden;
     background-color: white;
@@ -51,7 +51,12 @@ nav {
 
 .navigation-bar__option-header {
     padding: 5vh 0;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     text-decoration: none;
     color: black;
+}
+
+@media only screen and (min-width: 900px) {
+    nav { font-size: 1.5rem; }
+    .navigation-bar__option-header { font-size: 1.75rem; }
 }

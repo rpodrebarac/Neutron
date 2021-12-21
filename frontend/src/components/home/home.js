@@ -23,7 +23,7 @@ function Home() {
     return (
         <div>
             <div id="home-grid">
-                <h1 id="home-grid__title">Explore Blogs</h1>
+                <h1 id="home-grid__title">Explore <i>Neutron</i></h1>
                 { isHomeBlogPending ? <p>Loading...</p> : <Link to={`/blogs/${homeBlog._id}`} className="links"> <HomeBlog /> </Link> }
             </div>
 

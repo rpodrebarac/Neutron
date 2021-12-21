@@ -24,9 +24,9 @@
 
 /* Individual Home Blogs. */
 .individual-home-blog-container {
-    display: grid;
-    grid-template-columns: 30% 70%;
-    margin: 2% 8%;
+    display: block;
+    margin: 8% 10%;
+    text-align: center;
     cursor: pointer;
     border-radius: 20px;
     transition-duration: 0.5s;
@@ -43,6 +43,15 @@
 .individual-home-blog__image {
     width: 90%;
     border-radius: 20px;
+}
+
+@media only screen and (min-width: 900px) {
+    .individual-home-blog-container {
+        display: grid;
+        grid-template-columns: 30% 70%;
+        margin: 2% 8%;
+        text-align: left;
+    }
 }
 
 /* Readable Blogs. */
@@ -84,7 +93,7 @@
 
 .readable-blog-overhang {
     display: grid;
-    grid-template-columns: 80% 20%;
+    grid-template-columns: auto auto;
     position: fixed;
     left: 0;
     bottom: 0;
@@ -92,7 +101,25 @@
     background-color: white;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
     margin-right: 5vw;
-    padding: 2vh 5vw 2vh 5vw;
+    padding: 2vh 0vw;
+}
+
+#readable-blog-overhang__right {
+    text-align: right;
+    padding-right: 5vw;
+}
+
+#readable-blog-overhang__left {
+    padding-left: 5vw;
+}
+
+@media only screen and (max-width: 600px) {
+    .readable-blog-container {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .readable-blog-image { width: 80vw; }
 }
 
 /* Create Blogs. */
@@ -103,7 +130,7 @@
 }
 
 #create-blog-form-container {
-    margin: 10vh 18.5%;
+    margin: 10vh 8%;
 }
 
 label {
@@ -119,6 +146,7 @@ input[type = text], textarea, select, option {
     border: 1px solid rgb(197, 175, 175);
     font-size: 1rem;
     resize: vertical;
+    box-sizing: border-box;
 }
 
 textarea {
@@ -126,8 +154,7 @@ textarea {
 }
 
 #create-blog-image-container {
-    display: grid;
-    grid-template-columns: 60% 40%;
+    display: block;
 }
 
 #create-blog-image {
@@ -152,4 +179,10 @@ button {
 button:hover {
     color: white;
     background-color: #667ba6;
+}
+
+@media only screen and (min-width: 900px) {
+    #create-blog-form-container {
+        margin: 10vh 18.5%;
+    }
 }

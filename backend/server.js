@@ -1,10 +1,11 @@
 const express = require("express");
 const { MongoClient } = require("mongodb");
+require("dotenv").config();
 const router = require("./api/blogs.route");
 const BlogsDAO = require("./dao/blogsDAO");
 
 // MongoDB URI.
-const URI = "mongodb+srv://Henry:gw-henry2021@cluster0.npt1l.mongodb.net/Project0?retryWrites=true&w=majority";
+const URI = process.env.URI;
 
 // New MongoDB client.
 MongoClient.connect(URI)

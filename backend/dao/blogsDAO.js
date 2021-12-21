@@ -54,7 +54,7 @@ module.exports = class BlogsDAO {
         let { ok } = result;
         
         if (!ok) {
-            console.log("Your blog failed to post correctly.")
+            console.log("Your blog failed to post correctly.");
         } else {
             console.log("Your blog correctly posted.");
         }

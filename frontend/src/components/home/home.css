@@ -1,14 +1,22 @@
 /* All home styling. */
-#home-grid {
-    height: 90vh;
-    display: grid;
-    grid-template-columns: 40% 60%;
-    align-content: center;
+#home-grid__title {
+    margin: 5vh 0;
+    text-align: center;
 }
 
-#home-grid__title {
-    padding: 30% 10% 0 15%;
-    font-size: 4rem;
+@media only screen and (min-width: 900px) {
+    #home-grid {
+        height: 90vh;
+        display: grid;
+        grid-template-columns: 40% 60%;
+        align-content: center;
+    }
+
+    #home-grid__title {
+        padding: 30% 10% 0 15%;
+        font-size: 4rem;
+        text-align: left;
+    }
 }
 
 /* All filtered home styling. */
