@@ -1,0 +1,62 @@
+/* All general navigation bar styling. */
+nav {
+    height: 8vmin;
+    width: 100%;
+    padding-top: 4vmin;
+    position: sticky;
+    top: 0;
+    left: 0;
+    font-size: 1rem;
+    z-index: 1;
+    overflow-y: hidden;
+    background-color: white;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+    transition-duration: 2s;
+}
+
+#navigation-bar__header {
+    padding: 5%;
+    color: black;
+    text-decoration: none;
+}
+
+#navigation-bar__button {
+    position: absolute;
+    right: 5%;
+    cursor: pointer;
+}
+
+.navigation-bar__open {
+    height: 100vh;
+    position: fixed;
+}
+
+/* Blog categories. */
+#navigation-bar__blog-categories {
+    padding-top: 13vh;
+    text-align: center;
+}
+
+.navigation-bar__blog-category {
+    display: block;
+    padding-bottom: 2vh;
+    text-decoration: none;
+    color: black;
+    transition: 0.5s;
+}
+
+.navigation-bar__blog-category:hover {
+    color: #667ba6;
+}
+
+.navigation-bar__option-header {
+    padding: 5vh 0;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: black;
+}
+
+@media only screen and (min-width: 900px) {
+    nav { font-size: 1.5rem; }
+    .navigation-bar__option-header { font-size: 1.75rem; }
+}

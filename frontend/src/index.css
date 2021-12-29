@@ -1,0 +1,21 @@
+/* Fonts and general styling. */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+* {
+    font-family: "Noto Sans", sans-serif;
+    margin: 0;
+}
+
+/* Other. */
+.extra-bottom-padding {
+    padding-bottom: 25px;
+}
+
+.theme-colour {
+    color: #667ba6;
+}
+
+.links {
+    text-decoration: none;
+    color: black;
+}
