@@ -24,9 +24,9 @@ function CreateBlog() {
         }));
     }
 
-     // Send a POST request of the new blog.
+    // Send a POST request of the new blog.
     function handleSubmit() {
-        fetch("/api/contribute", {
+        fetch("/api/blogs/contribute", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

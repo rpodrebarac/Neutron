@@ -4,7 +4,7 @@ let neutronCollection;
 
 // The BLogsDAO class.
 module.exports = class BlogsDAO {
-    static async insertDataBase(connection) {
+    static async insertDatabase(connection) {
         try {
             neutronDB = await connection.db("neutron");
             neutronCollection = await neutronDB.collection("blogs");

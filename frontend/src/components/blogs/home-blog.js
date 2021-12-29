@@ -4,7 +4,7 @@ import useBlogData from "../custom-hook/useBlogData";
 
 function HomeBlog() {
     // Fetch the blogs from the backend.
-    const { data: blog, isPending } = useBlogData("/api/home-blog");
+    const { data: blog, isPending } = useBlogData("/api/blogs/home-blog");
 
     // Display the said data upon receiving it.
     function displayHomeBlogInformation(data) {

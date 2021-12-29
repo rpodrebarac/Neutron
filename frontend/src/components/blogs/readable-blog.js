@@ -6,7 +6,7 @@ import useBlogData from "../custom-hook/useBlogData";
 function ReadableBlog() {
     // Obtain the path of each blog and the blogs from the database. 
     const { path } = useParams();
-    const { data: blogs, isPending } = useBlogData("/api");
+    const { data: blogs, isPending } = useBlogData("/api/blogs");
 
     // Loop through all blogs (once they have loaded) and return the blog that matches the path of the selected blog.
     const readingBlog = (data) => {

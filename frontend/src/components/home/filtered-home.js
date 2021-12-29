@@ -25,7 +25,7 @@ function FilteredHome() {
 
     // Obtain the filter category and all blogs under such a category (make the said category's first letter uppercase as well).
     const { category } = useParams();
-    const { data: blogs, isPending } = useBlogData(`/api/filter/${formalize(category)}`);
+    const { data: blogs, isPending } = useBlogData(`/api/blogs/filter/${formalize(category)}`);
 
     return (
         <div>

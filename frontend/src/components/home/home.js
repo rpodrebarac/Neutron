@@ -8,8 +8,8 @@ import "./home.css";
 
 function Home() {
     // Fetch each blog's data from the database.
-    const { data: blogs, isPending } = useBlogData("/api");
-    const { data: homeBlog, isPending: isHomeBlogPending } = useBlogData("/api/home-blog");
+    const { data: blogs, isPending } = useBlogData("/api/blogs");
+    const { data: homeBlog, isPending: isHomeBlogPending } = useBlogData("/api/blogs/home-blog");
     
     // Delete the "Hello, World" blog.
     if (!isPending && !isHomeBlogPending) {
