@@ -7,6 +7,10 @@
 }
 
 /* Other. */
+.extra-top-padding {
+    padding-top: 10px;
+}
+
 .extra-bottom-padding {
     padding-bottom: 25px;
 }

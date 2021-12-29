@@ -16,11 +16,11 @@
     font-size: 1.5rem;
 }
 
-#footer-links .links {
+.footer-links .links {
     transition: 0.5s;
 }
 
-#footer-links .links:hover {
+.footer-links .links:hover {
     text-decoration: underline;
 }
 
