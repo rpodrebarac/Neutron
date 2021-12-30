@@ -2,7 +2,7 @@ const express = require("express");
 const { MongoClient } = require("mongodb");
 require("dotenv").config();
 const blogRouter = require("./api/blogs.route");
-// const userRouter = require("./api/users.route");
+const userRouter = require("./api/users.route")
 const BlogsDAO = require("./dao/blogsDAO");
 const UsersDAO = require("./dao/usersDAO");
 
@@ -28,7 +28,7 @@ app.use(express.json());
 
 // All blog and user related routes.
 app.use("/api/blogs", blogRouter);
-// app.use("/api/users", userRouter);
+app.use("/api/users", userRouter);
 
 // Listen on port 3001.
 app.listen(PORT, () => {
