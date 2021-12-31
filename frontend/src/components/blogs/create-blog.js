@@ -44,7 +44,7 @@ function CreateBlog() {
 
             <form onSubmit={handleSubmit} id="create-blog-form-container">
                 {/* Essential blog information. */}
-                <label for="title">Title</label>
+                <label htmlFor="title">Title</label>
                 <input 
                     name="title"
                     type="text"
@@ -54,7 +54,7 @@ function CreateBlog() {
                     required
                 />
 
-                <label for="category">Category</label>
+                <label htmlFor="category">Category</label>
                 <input 
                     name="category"
                     type="text"
@@ -64,7 +64,7 @@ function CreateBlog() {
                     required
                 />
 
-                <label for="description">Description</label>
+                <label htmlFor="description">Description</label>
                 <input 
                     name="description"
                     type="text"
@@ -74,13 +74,13 @@ function CreateBlog() {
                     required
                 />
 
-                <label for="content">Content</label>
+                <label htmlFor="content">Content</label>
                 <textarea name="content" placeholder="Write the Blog in Markdown Format." value={newBlogInformation.content} onChange={event => handleNewBlogInformationAlteration(event)} required></textarea>
 
                 {/* Image selection. */}
                 <div id="create-blog-image-container">
                     <div>
-                        <label for="image">Blog Image</label>
+                        <label htmlFor="image">Blog Image</label>
                         <select name="image" onChange={event => handleNewBlogInformationAlteration(event)} required>
                             <option value="idea.png">Idea (Default Image)</option>
                             <option value="magnetar.jpg">Magnetar</option>

@@ -23,11 +23,11 @@ function ReadableBlog() {
         <div className="readable-blog-container">
             {/* Main blog section. */}
             <h1 className="readable-blog-title">{ readingBlog("title") }</h1>
-            <p className="readable-blog-description"><ReactMarkdown children={ readingBlog("description") } /></p>
+            <ReactMarkdown children={ readingBlog("description") } className="readable-blog-description"/>
 
             <img src={ !readingBlog("image") ? <p>Loading...</p> : require(`../../images/${readingBlog("image")}`).default } alt="Failed to load." className="readable-blog-image" />
             <p className="readable-blog-category-and-date"><span className="theme-colour">{ readingBlog("category") }</span> | { readingBlog("date") }</p>
-            <div className="readable-blog-content"><ReactMarkdown children={ readingBlog("content") } /></div>
+            <ReactMarkdown children={ readingBlog("content") } className="readable-blog-content" />
 
             {/* About the author section. */}
             <hr className="theme-colour" style={{ "width": "100%" }} />
