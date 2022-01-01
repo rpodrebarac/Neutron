@@ -1,6 +1,7 @@
 const express = require("express");
 const { MongoClient } = require("mongodb");
 require("dotenv").config();
+const cookieParser = require("cookie-parser");
 const blogRouter = require("./api/blogs.route");
 const userRouter = require("./api/users.route")
 const BlogsDAO = require("./dao/blogsDAO");
@@ -25,6 +26,7 @@ const PORT = process.env.PORT || 3001;
 
 // Middleware.
 app.use(express.json());
+app.use(cookieParser());
 
 // All blog and user related routes.
 app.use("/api/blogs", blogRouter);

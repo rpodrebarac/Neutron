@@ -1,3 +1,4 @@
+const { ObjectId } = require("mongodb");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 require("dotenv").config(); 
@@ -65,6 +66,17 @@ module.exports = class UsersDAO {
             }
         } catch (error) {
             console.log("An error occurred: " + error);
+        }
+    }
+
+    // Obtain the user's data.
+    static async obtainUserData(id) {
+        // Search for a document that matches the said user's _id property.
+        try {
+            const user = await usersCollection.findOne({ _id: ObjectId(id) });
+            return user.firstName;
+        } catch (error) {
+            console.log("There was an error or the said user does not exist: " + error);
         }
     }
 
