@@ -1,12 +1,12 @@
 import React from "react";
 import { useParams } from "react-router";
 import ReactMarkdown from "react-markdown";
-import useBlogData from "../custom-hook/useBlogData";
+import useData from "../custom-hook/useData";
 
 function ReadableBlog() {
     // Obtain the path of each blog and the blogs from the database. 
     const { path } = useParams();
-    const { data: blogs, isPending } = useBlogData("/api/blogs");
+    const { data: blogs, isPending } = useData("/api/blogs");
 
     // Loop through all blogs (once they have loaded) and return the blog that matches the path of the selected blog.
     const readingBlog = (data) => {

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
-import useBlogData from "../custom-hook/useBlogData";
+import useData from "../custom-hook/useData";
 import IndividualHomeBlog from "../blogs/individual-home-blog";
 import "./home.css";
 
@@ -25,7 +25,7 @@ function FilteredHome() {
 
     // Obtain the filter category and all blogs under such a category (make the said category's first letter uppercase as well).
     const { category } = useParams();
-    const { data: blogs, isPending } = useBlogData(`/api/blogs/filter/${formalize(category)}`);
+    const { data: blogs, isPending } = useData(`/api/blogs/filter/${formalize(category)}`);
 
     return (
         <div>

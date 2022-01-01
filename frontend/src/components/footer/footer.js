@@ -8,11 +8,11 @@ function Footer() {
             <hr id="footer-line" />
             <div id="footer-grid__container">
                 <Link to="/" id="footer-header" className="footer-grid__item"><span style={{color: "#667ba6"}}>Neutron</span> Blog</Link>
-                <span class="footer-links">
+                <span className="footer-links">
                     <Link to="/mathematics" className="links">Mathematics</Link> | <Link to="/physics" className="links">Physics</Link> | <Link to="/chemistry" className="links">Chemistry</Link> | <Link to="/web-development" className="links">Web Development</Link> | <Link to="/other" className="links">Other</Link>
                 </span>
     
-                <div class="footer-links extra-top-padding">
+                <div className="footer-links extra-top-padding">
                     <Link to="/contribute" className="links">Contributors</Link>
                 </div>
             </div>

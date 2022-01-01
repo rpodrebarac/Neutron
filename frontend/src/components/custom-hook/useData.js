@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 // A custom hook for fetching data from the backend.
-function useBlogData(api) {
+function useData(api) {
     // Store the fetched data.
     const [data, setData] = useState(null);
     const [isPending, setIsPending] = useState(true);
@@ -20,4 +20,4 @@ function useBlogData(api) {
     return { data, isPending };
 }
 
-export default useBlogData;
+export default useData;

@@ -1,10 +1,10 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
-import useBlogData from "../custom-hook/useBlogData";
+import useData from "../custom-hook/useData";
 
 function HomeBlog() {
     // Fetch the blogs from the backend.
-    const { data: blog, isPending } = useBlogData("/api/blogs/home-blog");
+    const { data: blog, isPending } = useData("/api/blogs/home-blog");
 
     // Display the said data upon receiving it.
     function displayHomeBlogInformation(data) {

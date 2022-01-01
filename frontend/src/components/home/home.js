@@ -2,14 +2,14 @@ import React from "react";
 import HomeBlog from "../blogs/home-blog";
 import IndividualHomeBlog from "../blogs/individual-home-blog";
 import { Link } from "react-router-dom";
-import useBlogData from "../custom-hook/useBlogData";
+import useData from "../custom-hook/useData";
 import "../blogs/blogs.css";
 import "./home.css";
 
 function Home() {
     // Fetch each blog's data from the database.
-    const { data: blogs, isPending } = useBlogData("/api/blogs");
-    const { data: homeBlog, isPending: isHomeBlogPending } = useBlogData("/api/blogs/home-blog");
+    const { data: blogs, isPending } = useData("/api/blogs");
+    const { data: homeBlog, isPending: isHomeBlogPending } = useData("/api/blogs/home-blog");
     
     // Delete the "Hello, World" blog.
     if (!isPending && !isHomeBlogPending) {
