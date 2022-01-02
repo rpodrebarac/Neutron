@@ -31,6 +31,11 @@ nav {
     position: fixed;
 }
 
+#navigation-bar__welcome-statement {
+    position: absolute;
+    right: 10%;
+}
+
 /* Blog categories. */
 #navigation-bar__blog-categories {
     padding-top: 13vh;
@@ -50,7 +55,7 @@ nav {
 }
 
 .navigation-bar__option-header {
-    padding: 5vh 0;
+    padding: 4vh 0;
     font-size: 1.5rem;
     text-decoration: none;
     color: black;

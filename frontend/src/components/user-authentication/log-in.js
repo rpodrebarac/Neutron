@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./log-in.css";
 
 function LogIn() {
     // Collect data regarding the user's email and password.
@@ -37,24 +38,30 @@ function LogIn() {
 
         // Navigate back to the home page.
         navigate("/");
+
+        // Reload the page.
+        window.location.reload();
     }
 
     return (
-        <div>
+        <div id="log-in-container">
             <form onSubmit={handleSubmit}>
-                <h2>Log In</h2>
+                <h1 id="log-in-title">Log In</h1>
+
+                <label htmlFor="email">Email</label>
                 <input 
                     name="email"
                     type="text"
-                    placeholder="Email"
+                    placeholder="Enter Your Email"
                     onChange={event => handleLogInInformation(event)}
                     required
                 />
 
+                <label htmlFor="password">Password</label>
                 <input 
                     name="password"
                     type="password"
-                    placeholder="Password"
+                    placeholder="Enter Your Password"
                     onChange={event => handleLogInInformation(event)}
                     required
                 />

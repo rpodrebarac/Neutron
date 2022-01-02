@@ -5,7 +5,6 @@ import LogOutOption from "./log-out-option";
 import "./navigation-bar.css";
 
 function NavigationBar() {
-
     // Leave the state of the navigation bar open.
     const [open, setOpen] = useState(false);
     const [classname, setClassname] = useState(null);
@@ -24,17 +23,10 @@ function NavigationBar() {
         }
     }
 
-    // To log a user out.
-    function logOut() {
-        fetch("/api/users/contributors/log-out")
-            .then(response => console.log(response))
-            .catch(error => console.log(error))
-    }
-
     return (
         <nav className={classname}>
-            <Link to="/" id="navigation-bar__header"><span style={{color: "#667ba6"}}>Neutron</span> Blog</Link>
-            <span>{ !isPending ? "Welcome, " + user.firstName : "" }</span>
+            <Link to="/" id="navigation-bar__header" onClick={() => window.location.reload()}><span className="theme-colour">Neutron</span> Blog</Link>
+            <span id="navigation-bar__welcome-statement">{ !isPending ? <span>Welcome, <span className="theme-colour">{ user.firstName }</span></span> : "" }</span>
             <span id="navigation-bar__button" onClick={openNavigationBar}>&#8801;</span>
 
             {/* Links to each major blog category. */}
@@ -48,7 +40,7 @@ function NavigationBar() {
                 <Link to="/other" className="navigation-bar__blog-category" onClick={openNavigationBar}>Other</Link>
 
                 {/* Contributors' log out option. */}
-                <LogOutOption logOutFunction={logOut} />
+                <LogOutOption />
             </div>
         </nav>
     )

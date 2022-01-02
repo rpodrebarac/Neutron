@@ -1,0 +1,25 @@
+#log-in-container {
+    margin: 10vh 8%;
+}
+
+#log-in-title {
+    text-align: center;
+    margin-bottom: 5vh;
+}
+
+input[type = text], input[type = password] {
+    width: 100%;
+    margin: 1vh 0 2vh 0;
+    padding: 12px 20px;
+    border-radius: 6px;
+    border: 1px solid rgb(197, 175, 175);
+    font-size: 1rem;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+@media only screen and (min-width: 900px) {
+    #log-in-container {
+        margin: 10vh 18.5%;
+    }
+}
