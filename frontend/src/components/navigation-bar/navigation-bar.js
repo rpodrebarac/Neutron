@@ -25,7 +25,7 @@ function NavigationBar() {
 
     return (
         <nav className={classname}>
-            <Link to="/" id="navigation-bar__header" onClick={() => window.location.reload()}><span className="theme-colour">Neutron</span> Blog</Link>
+            <Link to="/" id="navigation-bar__header"><span className="theme-colour">Neutron</span> Blog</Link>
             <span id="navigation-bar__welcome-statement">{ !isPending ? <span>Welcome, <span className="theme-colour">{ user.firstName }</span></span> : "" }</span>
             <span id="navigation-bar__button" onClick={openNavigationBar}>&#8801;</span>
 

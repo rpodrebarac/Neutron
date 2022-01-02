@@ -7,6 +7,7 @@
 }
 
 #home-blog:hover {
+    color: #667ba6;
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -25,14 +26,17 @@
 /* Individual Home Blogs. */
 .individual-home-blog-container {
     display: block;
-    margin: 8% 10%;
+    margin: 8% 15%;
+    padding-bottom: 30px;
     text-align: center;
     cursor: pointer;
     border-radius: 20px;
+    box-sizing: border-box;
     transition-duration: 0.5s;
 }
 
 .individual-home-blog-container:hover {
+    color: #667ba6;
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -41,8 +45,8 @@
 }
 
 .individual-home-blog__image {
-    width: 90%;
-    border-radius: 20px;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
 }
 
 @media only screen and (min-width: 900px) {
@@ -50,7 +54,17 @@
         display: grid;
         grid-template-columns: 30% 70%;
         margin: 2% 8%;
+        padding-bottom: 0;
         text-align: left;
+    }
+
+    .individual-home-blog-text {
+        padding: 10px;
+    }
+
+    .individual-home-blog__image {
+        width: 90%;
+        border-radius: 20px;
     }
 }
 
